@@ -31,8 +31,8 @@ flipped=[]
 matched=[False]*16
 positions=[]   #holds x y coordinate of each card
 for i in range(16):
-    x=5.5*margin + (cardwidth + 3*margin) * (i % cols)
-    y=margin + (cardwidth + 4*margin) * (i // cols)
+    x=5.5*margin+(cardwidth+3*margin) * (i%cols)
+    y=margin+(cardwidth+4*margin) * (i//cols)
     positions.append((x, y))
 
 
@@ -47,8 +47,6 @@ def draw_card():   #showing cards at positions
     font = pygame.font.SysFont(None, 36)  //the score display
     score_text = font.render(f"Score: {points}", True, (255, 255, 255))
     screen.blit(score_text, (width // 2 - score_text.get_width() // 2, height - 42))
-
-    pygame.display.flip()
 
     pygame.display.flip()
 
