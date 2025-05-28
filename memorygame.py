@@ -100,7 +100,7 @@ while running:
         y = height // 2 - 100
         for line in lines:
             text=font.render(line, True, (255, 255, 255))
-            screen.blit(text, (width // 2 - text.get_width() // 2, y))
+            screen.blit(text, (width//2-text.get_width()//2, y))
             y+=text.get_height() + 10
             win_sound.play()
         pygame.display.flip()
