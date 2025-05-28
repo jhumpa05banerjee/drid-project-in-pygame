@@ -64,20 +64,20 @@ running=True
 points=5
 while running:
     draw_card()
-    font = pygame.font.SysFont(None, 72)
-    text = font.render(f"Score: {points}", True, (255, 255, 255))
+    font=pygame.font.SysFont(None, 72)
+    text=font.render(f"Score: {points}", True, (255, 255, 255))
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type==pygame.QUIT:
             running = False
 
-        elif event.type ==pygame.MOUSEBUTTONDOWN and len(flipped) < 2:
-            i= get_card_index(event.pos)
+        elif event.type==pygame.MOUSEBUTTONDOWN and len(flipped) < 2:
+            i=get_card_index(event.pos)
             if i is not None and not matched[i] and i not in flipped:
                 flipped.append(i)
                 draw_card()
 
             if len(flipped)==2:
-                pygame.time.delay(800)  #showing the cards for a moment
+                pygame.time.delay(800)  #showing the cards for only a moment
                 a,b=flipped
                 if cards[a]==cards[b]:
                     matched[a]=True
@@ -86,7 +86,7 @@ while running:
                     correct_sound.play()
                 else:
                     if points>=2:
-                        points=points-2
+                        points-=2
                     elif points==1:
                         points-=1
                     incorrect_sound.play()
