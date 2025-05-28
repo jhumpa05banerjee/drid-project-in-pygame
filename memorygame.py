@@ -1,4 +1,3 @@
-#JHUMPA BANERJEE 23103254 B9
 import pygame
 import random
 import time
@@ -6,7 +5,7 @@ pygame.init()
 width, height=700,700
 screen=pygame.display.set_mode((width,height))
 
-pygame.display.set_caption('Card Flip Game')
+pygame.display.set_caption('Memory Game Card Flipping')
 
 correct_sound=pygame.mixer.Sound("./sounds/match.wav")
 incorrect_sound=pygame.mixer.Sound("./sounds/wrong.mp3")
