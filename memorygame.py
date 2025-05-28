@@ -103,11 +103,6 @@ while running:
             screen.blit(text, (width // 2 - text.get_width() // 2, y))
             y += text.get_height() + 10
             win_sound.play()
-        '''font = pygame.font.SysFont(None, 72)
-        text = font.render(f"You Win!Score: {points}", True, (255, 255, 255)) 
-
-        
-        screen.blit(text, (width // 2 - 150, width // 2 - 50))'''
         pygame.display.flip()
         pygame.time.delay(5000)
         running = False
