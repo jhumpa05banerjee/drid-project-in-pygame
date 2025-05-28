@@ -82,7 +82,7 @@ while running:
                 if cards[a]==cards[b]:
                     matched[a]=True
                     matched[b]=True
-                    points=points+5
+                    points+=5
                     correct_sound.play()
                 else:
                     if points>=2:
@@ -99,9 +99,9 @@ while running:
         lines = ["You Win!", "", f"Score: {points}"]
         y = height // 2 - 100
         for line in lines:
-            text = font.render(line, True, (255, 255, 255))
+            text=font.render(line, True, (255, 255, 255))
             screen.blit(text, (width // 2 - text.get_width() // 2, y))
-            y += text.get_height() + 10
+            y+=text.get_height() + 10
             win_sound.play()
         pygame.display.flip()
         pygame.time.delay(5000)
