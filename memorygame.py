@@ -46,7 +46,7 @@ def draw_card():   #showing cards at positions
 
     font=pygame.font.SysFont(None, 36)  //the score display
     score_text=font.render(f"Score: {points}", True, (255, 255, 255))
-    screen.blit(score_text, (width // 2 - score_text.get_width() // 2, height - 42))
+    screen.blit(score_text, (width//2- score_text.get_width()//2, height - 42))
 
     pygame.display.flip()
 
