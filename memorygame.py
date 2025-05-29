@@ -68,16 +68,16 @@ while running:
     text=font.render(f"Score: {points}", True, (255, 255, 255))
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
-            running = False
+            running=False
 
-        elif event.type==pygame.MOUSEBUTTONDOWN and len(flipped) < 2:
+        elif event.type==pygame.MOUSEBUTTONDOWN and len(flipped)< 2:
             i=get_card_index(event.pos)
             if i is not None and not matched[i] and i not in flipped:
                 flipped.append(i)
                 draw_card()
 
             if len(flipped)==2:
-                pygame.time.delay(800)  #showing the cards for only a moment
+                pygame.time.delay(800)  
                 a,b=flipped
                 if cards[a]==cards[b]:
                     matched[a]=True
