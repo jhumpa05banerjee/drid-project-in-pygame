@@ -85,10 +85,7 @@ while running:
                     points+=5
                     correct_sound.play()
                 else:
-                    if points>=2:
-                        points-=2
-                    elif points==1:
-                        points-=1
+                    points-=1
                     incorrect_sound.play()
                 flipped=[]
 
@@ -96,16 +93,16 @@ while running:
         screen.fill((0, 200, 0))
         font = pygame.font.SysFont(None, 72)
 
-        lines = ["You Win!", "", f"Score: {points}"]
-        y = height // 2 - 100
+        lines=["You Win!", "", f"Score: {points}"]
+        y=(height//2)-100
         for line in lines:
             text=font.render(line, True, (255, 255, 255))
-            screen.blit(text, (width//2-text.get_width()//2, y))
-            y+=text.get_height() + 10
+            screen.blit(text, ((width//2)-(text.get_width()//2), y))
+            y+=text.get_height()+10
             win_sound.play()
         pygame.display.flip()
         pygame.time.delay(5000)
-        running = False
+        running=False
         pygame.quit()
 
 
