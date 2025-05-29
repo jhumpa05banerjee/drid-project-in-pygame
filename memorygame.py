@@ -31,8 +31,8 @@ flipped=[]
 matched=[False]*16
 positions=[]   #holds x y coordinate of each card
 for i in range(16):
-    x=5.5*margin+(cardwidth+3*margin) * (i%cols)
-    y=margin+(cardwidth+4*margin) * (i//cols)
+    x=5.5*margin+(cardwidth+3*margin)*(i%cols)
+    y=margin+(cardwidth+4*margin)*(i//cols)
     positions.append((x, y))
 
 
