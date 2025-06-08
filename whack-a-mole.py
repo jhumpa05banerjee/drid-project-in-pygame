@@ -3,26 +3,25 @@ import random
 
 pygame.init()
 
-width,height=700, 500
+width,height=700,500
 screen=pygame.display.set_mode((width,height))
 pygame.display.set_caption("Whack-a-Mole")
 clock=pygame.time.Clock()
 
 
-DARK_GREEN=(0, 150, 0)
-
 mole=pygame.transform.scale(pygame.image.load("images/mole.png"),(100,100))
-
 font_large=pygame.font.SysFont(None, 60)
 font=pygame.font.SysFont(None, 40)
 
 holes=[(100, 100), (300, 100), (500, 100),(100, 300), (300, 300), (500, 300)]
+colors=( "#18DEDB","#35ABD8", "#FF6FE3","#6fc466", "#306FE3", "#30BA38", "#99507F")
 
+i=0
 score=0
 lives=5
 level=1
 mole_timer=0
-mole_interval=1200    #time given to hit the mole
+mole_interval=1100    
 current_hole=random.choice(holes)
 mole_visible=True
 hit=False
@@ -71,7 +70,9 @@ def game_over_screen():
 
 running=True
 while running:
-    screen.fill("#6fc466")
+    if i>6:
+        i=0
+    screen.fill(colors[i])
     if active:
         draw_holes()
         current_time=pygame.time.get_ticks()
@@ -92,6 +93,10 @@ while running:
         draw_stats()
         if score>=level*10:
             level+=1
+            i+=1
+            if i>6:
+                i=0
+            screen.fill(colors[i])
             mole_interval=max(300, mole_interval-100)
 
         for event in pygame.event.get():
